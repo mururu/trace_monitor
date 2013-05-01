@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <th>time</th>
+      <th>pid</th>
+      <th>type</th>
+      <th>contents</th>
+    </tr>
+    <%= Enum.map @events, fn([pid: pid, type: type, contents: contents, time: time])-> %>
+      <tr>
+        <td><%= time.strftime("%X") %></td>
+        <td><%= pid %></td>
+        <td><%= type %></td>
+        <td><%= contents %></td>
+      </tr>
+    <% end %>
+  </table>
+</body>
+</html>
